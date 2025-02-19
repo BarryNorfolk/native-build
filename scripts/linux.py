@@ -5,9 +5,8 @@ from software.sdl import SDL
 from software.openal import OpenAL
 from software.fluidsynth import Fluidsynth
 
-from common import Github, Software, dump_build_notes, ARTIFACT_DIR, Platform
+from common import Github, Software, dump_build_notes, ARTIFACT_DIR, Platform, ROOT_DIR
 
-from pathlib import Path
 import subprocess
 
 if __name__ == "__main__":
@@ -43,7 +42,7 @@ if __name__ == "__main__":
 
     dump_build_notes(
         "native-build (Linux x64)",
-        Path("."),
+        ROOT_DIR,
         ARTIFACT_DIR.joinpath("notes.md"),
         [f"- {build.name}" for build in to_build],
     )
